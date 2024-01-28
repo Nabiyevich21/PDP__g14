@@ -47,7 +47,7 @@ class sick {
       <td>${phoneNumber}</td>
       <td>${level}</td>
       <td>${gender}</td>
-      <td><button class="btn btn-danger onclick="sick.deleteById('${id}')"</button>Delete</td>
+      <td><button class="btn btn-danger" onclick="sick.deleteById('${id}')"</button>Delete</td>
       
     </tr>
         `;
