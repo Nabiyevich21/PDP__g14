@@ -12,7 +12,7 @@ class sick {
 
   save() {
     const newSick = {
-      id: SickDb.length,
+      id: SickDb[SickDb.length - 1]?.id + 1 || 0,
       ...this,
     };
     SickDb.push(newSick);
@@ -31,7 +31,17 @@ class sick {
     // SickDb.splice(id, 1);
     // localStorage.setItem("patient", JSON.stringify(SickDb));
   }
-
+  static editById(id) {
+    const index = SickDb.findIndex((item) => item.id === Number(id));
+    if (index !== -1) {
+      const editSick = prompt("Enter the new value");
+      SickDb[index].fullname = editSick;
+      localStorage.setItem("patient", JSON.stringify(SickDb));
+      this.Render();
+    } else {
+      console.log("not found");
+    }
+  }
   static Render(renderElId = "tableBody") {
     const renderEl = document.getElementById(renderElId);
     renderEl.innerHTML = "";
@@ -48,7 +58,7 @@ class sick {
       <td>${level}</td>
       <td>${gender}</td>
       <td><button class="btn btn-danger" onclick="sick.deleteById('${id}')"</button>Delete</td>
-      
+      <td><button class="btn btn-primary" onclick=" sick.editById('${id}')">Edit</button></td>
     </tr>
         `;
       renderEl.innerHTML += tample;

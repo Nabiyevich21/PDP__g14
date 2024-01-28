@@ -17,6 +17,7 @@ SickForm.addEventListener("submit", (e) => {
   const newSick = new sick(newSickobj);
   newSick.save();
   sick.Render();
+  sick.editById();
   // SickForm.reset();
   location.reload();
 });
