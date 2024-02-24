@@ -58,7 +58,7 @@ class sick {
       <td>${level}</td>
       <td>${gender}</td>
       <td><button class="btn btn-danger" onclick="sick.deleteById('${id}')"</button>Delete</td>
-      <td><button class="btn btn-primary" onclick=" sick.editById('${id}')">Edit</button></td>
+      <td><button class="btn btn-primary" onclick="sick.editById('${id}')">Edit</button></td>
     </tr>
         `;
       renderEl.innerHTML += tample;

@@ -18,6 +18,6 @@ SickForm.addEventListener("submit", (e) => {
   newSick.save();
   sick.Render();
   sick.editById();
-  // SickForm.reset();
-  location.reload();
+  SickForm.reset();
+  // location.reload();
 });
