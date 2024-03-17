@@ -17,6 +17,7 @@ export default class Counter extends Component {
     }
     componentDidUpdate() {
         console.log("ComponentDidUpdate");
+        localStorage.setItem("counter", this.state.count);
     }
     componentWillUnmount() {
         console.log("ComponentWillUnmount");
