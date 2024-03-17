@@ -9,23 +9,24 @@ export default class Counter extends Component {
         };
         this.incrementCount = this.incrementCount.bind(this);
         this.decrementCount = this.decrementCount.bind(this);
+        this.restartCount = this.restartCount.bind(this);
     }
-    incrementCount = () => {
+    incrementCount() {
         this.setState({ isCounting: true });
         this.CounterId = setInterval(() => {
             this.setState({ count: this.state.count + 1 });
         }, 1000);
-    };
+    }
 
-    decrementCount = () => {
+    decrementCount() {
         this.setState({ isCounting: false });
         clearInterval(this.CounterId);
-    };
+    }
 
-    restartCount = () => {
+    restartCount() {
         this.setState({ isCounting: false, count: 0 });
         clearInterval(this.CounterId);
-    };
+    }
     render() {
         return (
             <div className="timer__content">
