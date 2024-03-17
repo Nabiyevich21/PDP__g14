@@ -11,6 +11,16 @@ export default class Counter extends Component {
         this.decrementCount = this.decrementCount.bind(this);
         this.restartCount = this.restartCount.bind(this);
     }
+
+    componentDidMount() {
+        console.log("ComponentDidMount");
+    }
+    componentDidUpdate() {
+        console.log("ComponentDidUpdate");
+    }
+    componentWillUnmount() {
+        console.log("ComponentWillUnmount");
+    }
     incrementCount() {
         this.setState({ isCounting: true });
         this.CounterId = setInterval(() => {
